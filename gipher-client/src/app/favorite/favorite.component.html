@@ -1,0 +1,37 @@
+
+<app-header></app-header>
+<div class ="container">
+  <mat-card  style="width: 20rem;" class="gif-thumbnail" id="gif-thumbnail" *ngFor = "let item of gif  ">
+ 
+   <img  height="300px" src="{{item.url}}" class="card-img-top" alt="..."> 
+   <mat-card-actions class="gif-actions" style="float:left;">
+   <button class="btn btn-primary" style="margin-left: 10px" mat-button (click) = removeFavourite(item)>remove </button>
+   </mat-card-actions>
+  </mat-card> 
+</div>
+<br/>
+
+<br/><br/>
+
+<footer>
+  <div class="copyright">Contact Us</div>
+  <section class="herounit-mask">
+    <a href="https://www.facebook.com/">
+      <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://www.twitter.com/">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.youtube.com/">
+      <i class="fa fa-youtube"></i>
+    </a>
+    <a href="https://www.skype.com/">
+      <i class="fa fa-skype"></i>
+    </a>
+    <a href="https://www.linkedin.com/">
+      <i class="fa fa-linkedin"></i>
+    </a>
+  </section>
+ 
+ 
+</footer>

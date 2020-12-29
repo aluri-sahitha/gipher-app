@@ -1,0 +1,21 @@
+<!-- <p>gifdetails works!</p> -->
+<app-header></app-header>
+<div class="gif-container">
+    <mat-card style="display: inline-block; vertical-align: middle; margin-left: 20%;" class="gif-thumbnail" id="gif-thumbnail">
+        <mat-card-header>
+            <mat-card-title>
+              <h4>{{item.cur_url.title}}</h4>
+             
+            </mat-card-title>
+        </mat-card-header>
+        <img  height="300px" src="{{item.cur_url.images.original.url}}" class="card-img-top" alt="...">
+       
+      <mat-card-actions class="gif-actions" style="float:left; width: 100%; margin-left: 30%;">
+            <button  class="btn btn-primary" style="margin-left: 10px" mat-button (click) = recommendGifs(item.cur_url)>Recommend</button>
+            <button class="btn btn-primary" style="margin-left: 10px" mat-button (click) = favoriteGifs(item.cur_url)>Favorite </button> -->
+              <button class="btn" style="margin-left: 10px" (click) = downloadGif(item.cur_url.images.original.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>  
+      </mat-card-actions>
+    </mat-card>
+  </div>
+ 
+<app-maincomment></app-maincomment>

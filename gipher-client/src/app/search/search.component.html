@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+
+<input class="form-control mr-sm-2" [(ngModel)] = "text" type="search" placeholder="Search" style="max-width:300px;" aria-label="Search">
+<!-- <button class="btn btn-outline-success my-2 my-sm-0" (click)= "getdata()" type="submit">Search</button> -->
+<mat-button-toggle-group name="searchType" [(ngModel)]="type"  aria-label="Font Style">
+  <mat-button-toggle selected  color="accent" value="Gifs">Gifs</mat-button-toggle>
+  
+  <mat-button-toggle color="accent" value="Stickers">Stickers</mat-button-toggle>
+ 
+</mat-button-toggle-group>
+<button class="btn btn-outline-success my-2 my-sm-0" (click)= "getdata()" type="submit">Search</button>
+<div class="search">
+    <div *ngIf="isGif">
+      <div class="container" >
+        <mat-card  style="width: 20rem;" class="gif-thumbnail" id="gif-thumbnail" *ngFor="let x of result | paginate:{itemsPerPage : 10 , currentPage : p}">
+           <!-- <div class="card-deck"> -->
+               <div class="card" style="width: 18rem;">
+                 <img height="300px" src="{{x.images.preview_gif.url}}" class="card-img-top" alt="..." (click)="goToComments(x)">
+                 <mat-card-actions class="gif-actions" >
+                   <a [routerLink] = ""  (click) = recommendGifs(x) style="margin-right: 16px; margin-left: 20px;" class="btn btn-primary">Recommend </a>
+                   <a [routerLink] = ""   (click) =favoriteGifs(x) style="margin-left: 20px" class="btn btn-primary">Favorite </a>
+                   <button class="btn" (click) = downloadGif(x.images.preview_gif.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>
+                 </mat-card-actions>
+               </div>
+           <!-- </div> -->
+        </mat-card>
+        
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    
+     <div *ngIf="isSticker">
+      <div class="container" >
+        <div *ngFor="let item of result | paginate:{itemsPerPage : 10 , currentPage : p}">
+           <div class="card-deck">
+               <div class="card" style="width: 18rem;">
+                 <img height="300px" src="{{item.images.original.url}}" class="card-img-top" alt="..." (click)="goToComments(item)">
+                 <div class="card-body">
+                   <a [routerLink] = ""   style="margin-right: 16px" class="btn btn-primary">Recommend</a>
+                   <a [routerLink] = ""   style="margin-left: 20px" class="btn btn-primary">Favorite </a>
+                   <button class="btn" (click) = downloadSticker(x.images.original.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>
+                  </div>
+               </div>
+           </div>
+        </div>
+        
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>
+    </div>
+     
+     
+     
+    
+    
+    
+    

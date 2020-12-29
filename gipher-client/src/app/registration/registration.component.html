@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<div class="video-container">
+  <div class="inner-container" style="background-color: rgb(59, 37, 37);  opacity: 1;">
+  <div class="box">
+  
+  <h1><i class="fa fa-user"></i> register Here</h1>
+
+
+<!-- <div class="img">
+    <br>
+    <div class="container" style="max-width: 300px;   background-color:white; margin:auto">
+        <mat-card>
+            <h2 class="textual">User Registration </h2> -->
+        <form #Registerform= "ngForm" (ngSubmit)="registerUser()">
+         
+            
+          <div class="form-group">
+            <!-- <label for="email">Email:</label><br> -->
+            <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="user.emailId" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  
+             #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched"
+            >
+         <div *ngIf="email.errors && (email.invalid && email.touched)">
+             <small class="text-danger" *ngIf="email.errors.required">Email Id is Required Field</small>
+             <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid EmailId</small>
+         </div>          
+         </div>
+         <div class="form-group">
+            <!-- <label for="userName">User Name:</label><br> -->
+            <input type="text" class="form-control"  placeholder="Enter username" name="userName"  [(ngModel)]="user.userName"  #userName="ngModel" required
+            [class.is-invalid]="userName.invalid && userName.touched"
+            >
+            <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">UserName  is a required Field</small>
+
+          </div>
+          <div class="form-group">
+            <!-- <label for="pwd">Password:</label><br> -->
+            <input type="password" class="form-control"  placeholder="Enter password" name="password"  [(ngModel)]="user.password"  #password="ngModel" required  
+            [class.is-invalid]="password.invalid && password.touched"
+            >
+            <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password  is a required Field</small>
+
+          </div>
+
+          <div class="form-group">
+            <!-- <label for="pwd">Confirm Password:</label><br> -->
+            <input type="password" class="form-control"  placeholder="Enter Confirm password" name="cpassword" #cpassword="ngModel"  (ngModel)="user.password" required 
+            [class.is-invalid]="cpassword.invalid && cpassword.touched">
+            <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">password & confirm password must be same</small>
+
+          </div>
+
+          <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+          <span class="examplespan"></span>
+          <small class="float-right" (click)="gotologin()">Existing User? click Here :)</small>
+        </form>
+        <!-- </mat-card>
+        
+      </div>
+</div> -->
+</div>
+</div>
+</div>
+

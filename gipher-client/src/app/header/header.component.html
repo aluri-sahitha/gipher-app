@@ -1,0 +1,69 @@
+<!-- <nav class="navbar ">
+  <a class="navbar-brand"> GIPHER </a>
+  <div class="form-inline">
+    <a class="nav-link" style="font-size: large;"  mat-button [routerLink]="['/dashboard']">Trending </a>
+   
+    <a  class="nav-link" style="font-size: large;" mat-button [routerLink]="['/favorite']" id="favorites">Favourite Gifs</a> -->
+  
+  <!--  -->
+    <!-- <a  class="nav-link" style="font-size:larger;" mat-button  [routerLink]="['/recommendation']" id="recommendation">Recommendations</a> -->
+    <!-- <a  class="nav-link" style="font-size:larger;" mat-button  [routerLink]="['/login']" id="login">Login</a> -->
+    <!-- <a  class="nav-link" style="font-size:larger;" mat-button  [routerLink]="['/profile']" id="login">Profile</a> -->
+    <!-- <input class="form-control mr-sm-2" [(ngModel)] = "text" type="search" placeholder="Search" aria-label="Search">
+    <mat-button-toggle-group name="searchType" [(ngModel)]="type"  aria-label="Font Style">
+      <mat-button-toggle selected  color="accent" value="Gifs">Gifs</mat-button-toggle>
+      
+      <mat-button-toggle color="accent" value="Stickers">Stickers</mat-button-toggle>
+     
+    </mat-button-toggle-group>
+      
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)= "getdata()" type="submit">Search</button>
+    <a  class="nav-link" style="font-size:large;" mat-button  [routerLink]="['/login']" id="login">Login</a>
+  </div>
+</nav>
+
+<app-search *ngIf="state" [message]="result" [isGif]="isGif" [isSticker]="isSticker"></app-search>
+
+<div class="home" style="text-align: center;"> --> 
+  <!--  -->
+<!-- <marquee behavior="" direction="right"><h1>Welcome To Gipher !   Enjoy the Gifs and Stickers !</h1></marquee> -->
+<!-- </div>
+<br> -->
+<nav class="navbar ">
+  <a class="navbar-brand"> GIPHER </a>
+  <div class="form-inline">
+    <a class="nav-link" style="font-size: large;"  mat-button (click)= "trenddata()">Trending </a>
+    
+    <a  class="nav-link" style="font-size: large;" mat-button *ngIf = "isLogged" (click)= "toFav(item)"  [routerLink]="['/favorite']"id="favorites">Favourite Gifs</a>
+    <!-- <a  class="nav-link" style="font-size:larger;" mat-button  [routerLink]="['/recommendation']" id="recommendation">Recommendations</a> -->
+    <!-- <a  class="nav-link" style="font-size:larger;" mat-button  [routerLink]="['/login']" id="login">Login</a> -->
+    
+    <!-- <input class="form-control mr-sm-2" [(ngModel)] = "text" type="search" placeholder="Search" aria-label="Search">
+    <mat-button-toggle-group name="searchType" [(ngModel)]="type"  aria-label="Font Style">
+      <mat-button-toggle selected  color="accent" value="Gifs">Gifs</mat-button-toggle>
+      
+      <mat-button-toggle color="accent" value="Stickers">Stickers</mat-button-toggle>
+     
+    </mat-button-toggle-group>
+       -->
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)= "getdata()" type="submit">Search</button>
+    
+    <a   class="nav-link" style="font-size:large;color:white" mat-button *ngIf="!isLogged" [routerLink]="['/login']" id="login"><span><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login</span></a>
+    <a  class="nav-link" style="font-size:larger;" mat-button *ngIf ="isLogged" [routerLink]="['/profile']" id="login"> 
+      <i class="fa fa-user"></i> {{username}}</a> 
+   <a   class="nav-link" style="font-size:large;" mat-button *ngIf="isLogged" [routerLink]="['/logout']" id="logout"><span><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Logout</span></a>
+   
+
+  </div>
+  
+</nav>
+
+<!-- <app-search *ngIf="state" [message]="result" [isGif]="isGif" [isSticker]="isSticker"></app-search> -->
+<!-- <app-dashboard *ngIf= "istrend"></app-dashboard> -->
+<div class="home" style="text-align: center;">
+</div>
+<br>
+ <!-- <router-outlet></router-outlet>  -->
+
+<router-outlet></router-outlet>
+

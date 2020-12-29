@@ -1,0 +1,46 @@
+.navbar {
+     background-color: black;
+}
+.btn {
+    margin-right: 0.5em;
+}
+.navbar-brand {
+    font-size: larger;
+    font-weight: 1000;
+    color:white;
+}
+.nav-link{
+    color:white;
+}
+.home {
+    background-color: burlywood;
+}
+
+img{
+    height: 10%;
+    width:10%;
+}
+mat-button-toggle{
+
+    color:white;
+}
+
+.navbar-brand {
+    font-family: 'Times New Roman', Times, serif;
+    color: #FFFF;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.button {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.dropdown-item.text-dark.font-weight-bold {
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px white;
+    font-size: 20px;
+    /* inline-size: 4px; */
+    /* z-index: -1 */
+}

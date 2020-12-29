@@ -1,0 +1,82 @@
+
+<app-header></app-header>
+<h2 class="p2">Trending Gifs</h2>
+<div class="gif-container">
+  <mat-card  style="width: 20rem;" class="gif-thumbnail" id="gif-thumbnail" *ngFor="let item of gifs.data | paginate: { id: 'listing_pagination',
+  itemsPerPage: 6,
+  currentPage: page,
+  totalItems: totalRecords }"  >
+   
+   <img  height="300px"  src="{{item.images.original.url}}" class="card-img-top" alt="..." (click)="goToComments(item)">
+    
+
+    <mat-card-actions class="gif-actions" style="float:left;">
+          <button  class="btn btn-primary" style="margin-left: 10px" mat-button (click) = recommendGifs(item)>Recommend</button>
+         
+          <button class="btn btn-primary" style="margin-left: 10px" mat-button (click)= "toFav(item)">Favorite </button>
+          <button class="btn" style="margin-left: 10px" (click) = downloadGif(item.images.original.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>
+      
+    </mat-card-actions>
+
+  </mat-card>
+
+  <div>
+    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+  
+</div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<!--  -->
+
+  
+  <div >
+    
+   <h2 class="p1">Recommended Gifs</h2> 
+   
+  </div>
+  
+
+  
+ 
+<div class ="container">
+  <mat-card  style="width: 20rem;" class="gif--thumbnail" id="gif--thumbnail" *ngFor = "let item of recommendedGifList  | paginate: { id: 'listing_pagination',
+ itemsPerPage: 6,
+ currentPage: page,
+ totalItems: totalRecords }">
+ 
+   <img  height="300px" src="{{item.url}}" class="card-img-top" alt="...">
+    <p>Recommended users {{item.count}}</p>
+ 
+  </mat-card> 
+</div>
+<br/>
+<div>
+<pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+</div> 
+<br/><br/><br/>
+<br/>
+<app-footer></app-footer>
+
+<!-- <footer>
+  <div class="copyright">Contact Us</div>
+  <section class="herounit-mask">
+    <a href="https://www.facebook.com/">
+      <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://www.twitter.com/">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.youtube.com/">
+      <i class="fa fa-youtube"></i>
+    </a>
+    <a href="https://www.skype.com/">
+      <i class="fa fa-skype"></i>
+    </a>
+    <a href="https://www.linkedin.com/">
+      <i class="fa fa-linkedin"></i>
+    </a>
+  </section>
+ 
+</footer> -->
+<!-- <router-outlet></router-outlet> -->

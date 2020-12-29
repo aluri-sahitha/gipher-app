@@ -1,0 +1,43 @@
+
+
+<div class="container">
+    <div class="card">
+        <div class="commentbox">
+            <div class="col-12 col-sm-12 header">
+                <h4>Comments ({{count}})</h4>
+            </div>
+            <div class="col-12 col-sm-12 body">
+                <div class="comment-container">
+                        <div class="comment-form">
+                                <app-commentbox (usercomment)="receiveComment($event)"></app-commentbox>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <app-comment [postComment]="comments" (countComments)="recieveCount($event)"></app-comment>
+    </div>
+  </div>
+<br/>
+<br/>
+<footer>
+    <div class="copyright">Contact Us</div>
+    <section class="herounit-mask">
+      <a href="https://www.facebook.com/">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://www.twitter.com/">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="https://www.youtube.com/">
+        <i class="fa fa-youtube"></i>
+      </a>
+      <a href="https://www.skype.com/">
+        <i class="fa fa-skype"></i>
+      </a>
+      <a href="https://www.linkedin.com/">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </section>
+   
+   
+  </footer>

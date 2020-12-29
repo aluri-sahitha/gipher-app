@@ -1,0 +1,103 @@
+
+
+ <app-header></app-header>
+
+ <!--<nav class="navbar navbar-fixed-top navbar-expand-lg   "> -->
+    <!-- <a class="navbar-brand" href="#"><img src="https://cdn.jim-nielsen.com/ios/512/giphy-world-ar-gif-stickers-2018-02-05.png" alt=""></a>  -->
+    <!-- <a  class="navbar-brand pulse"  href="#">Gipher</a> -->
+   
+    
+    
+  <!-- </nav> -->
+  
+<!-- <div class="video-container">
+<div class="inner-container" style="background-color: rgb(59, 37, 37);  opacity: 1;">
+<div class="box">
+
+<h1><i class="fa fa-user"></i> Login Here</h1>
+<form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+        <small class="esmall" *ngIf="email.invalid && (email.dirty || email.touched)">
+            email is mandatory field
+        </small>
+    </div>
+      <div class="form-group">
+         <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+        <small *ngIf="password.invalid && (password.dirty || password.touched)">
+            <small *ngIf="password.errors.required"> password cannot be left blank </small>
+            <small *ngIf="password.errors.minlength">password must have minimum 8characters</small>
+        </small>
+    </div>
+    <div class="but "> -->
+        <!-- <button type="submit" class="btn" [disabled]="!loginForm.valid" value="sign In" style="background-color: rgb(26, 64, 102);"><i class="fa fa-sign-in"></i> Login</button> -->
+        <!-- <button [disabled]="!loginForm.valid" value="sign In" style="background-color: rgb(26, 64, 102); width: 75%;" class="form-control"><i class="fa fa-sign-in"></i>Log In</button>
+        <button (click)="tosignup()" value="signIn" class="form-control" style="width: 75%;">Sign Up</button>
+    </div> -->
+    <!-- <div class="but"> -->
+        <!-- <button [disabled]="!loginForm.valid" value="sign In">Log In</button> -->
+        <!--input class="submit"[disabled} = "!loginForm.valid" value="signIn"-->
+        <!-- <button (click)="tosignup()" value="signIn">New User</button> -->
+    <!-- </div> -->
+<!-- </form>
+</div>
+</div>
+</div>  -->
+
+<div class="video-container">
+  <div class="inner-container" style="background-color: rgb(59, 37, 37);  opacity: 1;">
+  <div class="box">
+  
+<!-- <div class="imgg" >
+    <br>
+    <div class="container" style="max-width: 400px ; max-height: auto; background-color: white;margin:auto">
+      <div>
+        <mat-card> -->
+          <h1><i class="fa fa-user"></i> Login Here</h1>
+        <form #loginform= "ngForm" (ngSubmit)="loginUser()">
+           <!-- {{loginform.form.valid}}--> 
+            <small class="text-danger">{{msg}}</small>
+          <div class="form-group">
+            <!-- <mat-card-content> -->
+              <!-- <label for="email">Email:</label><br> -->
+            <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="user.emailId" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  
+             #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched"
+            >
+            <!-- </mat-card-content> -->
+<!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">EmailId is Required field</small>-->  
+         <div *ngIf="email.errors && (email.invalid && email.touched)">
+             <small class="text-danger" *ngIf="email.errors.required">Email Id is Required Field</small>
+             <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid EmailId</small>
+         </div>          
+         </div>
+          <div class="form-group">
+            <!-- <mat-card-content> -->
+              <!-- <label for="pwd">Password:</label><br> -->
+              <input type="password" class="form-control"  placeholder="Enter password" name="password"  [(ngModel)]="user.password" required #password="ngModel"
+                [class.is-invalid]="password.invalid && password.touched"><br>
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password  is a required Field</small>
+
+            <!-- </mat-card-content> -->
+          </div>
+          <!-- <div class="checkbox">
+            <label><input type="checkbox" name="remember"> Remember me</label>
+          </div> -->
+          <div class="but">
+          <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info">Login</button>
+            <!-- <span class="examplspan"></span> -->
+            <!-- <small class="float-right" style="color: black;" (click)="gotoregistration()">Sign Up</small> -->
+            <button  (click)="gotoregistration()" value="signIn">New User</button>
+          </div>
+        </form>
+        <!-- </mat-card>
+      </div>
+        
+       
+    </div> -->
+</div>
+</div>
+</div>
+
+<app-footer></app-footer>
+

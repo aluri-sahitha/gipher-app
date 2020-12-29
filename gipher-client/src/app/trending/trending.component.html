@@ -1,0 +1,39 @@
+<div class="gif-container">
+    <mat-card  style="width: 20rem;" class="gif-thumbnail" id="gif-thumbnail" *ngFor="let item of gifs.data | paginate: { id: 'listing_pagination',
+    itemsPerPage: 6,
+    currentPage: page,
+    totalItems: totalRecords }"  >
+     
+     <img  height="300px" [routerLink]="['/comment']" src="{{item.images.original.url}}" class="card-img-top" alt="...">
+      <mat-card-actions  style="float:left;">
+            <button  class="btn btn-primary" style="margin-left: 9px" mat-button (click) = recommendGifs(item)>Recommend</button>
+            <button class="btn btn-primary" style="margin-left: 10px" mat-button (click) = favoriteGifs(item)>Favorite </button>
+            <button class="btn"  (click) = downloadGif(item.images.original.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>
+        
+      </mat-card-actions>
+  
+    </mat-card>
+  </div>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+  <div>
+    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+  
+
+  <div class ="container">
+    <mat-card  style="width: 20rem;" class="gif-thumbnail" id="gif-thumbnail" *ngFor = "let item of recommendedGifList  | paginate: { id: 'listing_pagination',
+   itemsPerPage: 3,
+   currentPage: page,
+   totalItems: totalRecords }">
+   <!-- <div class="card" style="width: 16rem;"> -->
+     <img  height="300px" src="{{item.images.original.url}}" class="card-img-top" alt="...">
+      
+    <!-- </div> -->
+    </mat-card> 
+  </div>
+  <br/>
+  <div>
+  <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div> 
+  
